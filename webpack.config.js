@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const _defaultAssetsDirName = "assets";
-const port = 8072;
+const port = 8075;
 
 let mode;
 let _isProduction;
@@ -168,9 +168,11 @@ module.exports = (env={mode:"development"})=> {
 
 const getWebpackPlugins = ()=> {
 
-  const miniCssPlugin = new MiniCssExtractPlugin({
-    filename: `${_assetsFolder}/css/main.css`
-  });
+  const miniCssPlugin = ()=> {
+    return new MiniCssExtractPlugin({
+      filename: `${_assetsFolder}/css/main.css`
+    });
+  }
 
   const definePlugin = new webpack.DefinePlugin({
     'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -182,7 +184,7 @@ const getWebpackPlugins = ()=> {
   });
 
   return _isProduction ?
-      [definePlugin, miniCssPlugin] :
+      [definePlugin, miniCssPlugin()] :
       [htmlPlugin, definePlugin];
 
 }
