@@ -1,6 +1,6 @@
 {
   "name": "spyne-plugin-starter-template",
-  "version": "0.3.0",
+  "version": "0.3.3",
   "description": "A plugin template for the spynejs framework",
   "main": "lib/spyne-plugin-starter-template.min.js",
   "module": "src/app/spyne-plugin-starter-template.js",

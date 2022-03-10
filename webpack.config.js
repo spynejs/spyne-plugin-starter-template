@@ -33,11 +33,19 @@ module.exports = (env={mode:"development"})=> {
     entryFile  = `./src/app/${libraryName}.js`;
     externalsArr = [
       {
-        gsap: {
-          commonjs: 'gsap',
-          commonjs2: 'gsap',
-          amd: 'gsap',
-          root: 'gsap',
+        ramda: {
+          commonjs: 'ramda',
+          commonjs2: 'ramda',
+          amd: 'ramda',
+          root: 'ramda',
+        },
+      },
+      {
+        rxjs: {
+          commonjs: 'rxjs',
+          commonjs2: 'rxjs',
+          amd: 'rxjs',
+          root: 'rxjs',
         },
       },
 
